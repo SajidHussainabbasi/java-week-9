@@ -16,7 +16,7 @@ Without a service layer, your controllers would:
 Using a service layer provides:
 
 | Benefit                | Description                                       |
-|------------------------|---------------------------------------------------|
+| ---------------------- | ------------------------------------------------- |
 | Separation of concerns | Each layer has a clear responsibility             |
 | Reusability            | Logic can be reused across multiple controllers   |
 | Testability            | Services are easier to unit-test than controllers |
@@ -31,7 +31,7 @@ Controller → Calls → Service → Calls → Repository → Talks to DB
 ```
 
 | Layer          | Responsibility                       |
-|----------------|--------------------------------------|
+| -------------- | ------------------------------------ |
 | Controller     | Handles HTTP requests & responses    |
 | Service        | Contains business logic / processing |
 | Repository     | Interacts with database              |
@@ -45,7 +45,7 @@ Example folder structure:
 
 ```bash
 src/main/java/com/example/project/service
-````
+```
 
 Example service class:
 
@@ -58,7 +58,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class StudentService {
+public class StudentService
+{
 
     private final StudentRepository repo;
 
@@ -93,12 +94,12 @@ public class StudentService {
         repo.deleteById(id);
     }
 }
-````
+```
 
 ### Key Annotation
 
 | Annotation | Meaning                                                                |
-|------------|------------------------------------------------------------------------|
+| ---------- | ---------------------------------------------------------------------- |
 | `@Service` | Marks the class as a service component (used for dependency injection) |
 
 ---
@@ -110,7 +111,8 @@ Example controller usage:
 ```java
 @RestController
 @RequestMapping("/api/students")
-public class StudentController {
+public class StudentController 
+{
 
     private final StudentService service;
 
@@ -132,7 +134,7 @@ The controller **does not** interact with the repository directly.
 ## ✅ Summary
 
 | Concept        | Explanation                                    |
-|----------------|------------------------------------------------|
+| -------------- | ---------------------------------------------- |
 | Service Layer  | Handles the business logic of the application  |
 | Benefits       | Cleaner code, easier testing, better structure |
 | Interaction    | Controller → Service → Repository → Database   |

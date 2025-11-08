@@ -21,16 +21,19 @@ By the end of this week, students will be able to:
 ## 🧠 Key Concepts
 
 ### 1. Database Configuration in Spring Boot
+
 - Adding required dependencies
 - Setting database connection properties
-- Understanding autoconfiguration and Hibernate integration
+- Understanding auto configuration and Hibernate integration
 
 ### 2. JPA Entities & ORM (Object–Relational Mapping)
+
 - Defining model classes as entities
 - Managing primary keys and field mappings
 - Understanding how tables and objects correspond
 
 ### 3. Spring Data JPA Repositories
+
 - Using repository interfaces to handle database operations
 - Built-in CRUD methods and query generation
 
@@ -44,6 +47,7 @@ model/        → Data representation (entities)
 ```
 
 ### 5. Testing & Tools
+
 - Using Postman to test API endpoints
 - Viewing logs to track SQL statements
 - Managing database tables using pgAdmin or DBeaver
@@ -52,13 +56,13 @@ model/        → Data representation (entities)
 
 ## 🧰 Recommended Tools
 
-| Tool              | Purpose                                |
-|-------------------|----------------------------------------|
-| IntelliJ IDEA     | Develop & run Spring Boot projects     |
-| PostgreSQL        | Relational database used this week     |
-| pgAdmin / DBeaver | GUI clients for exploring the database |
-| Postman           | Test REST API endpoints                |
-| Spring Initializr | Generate Spring Boot skeleton projects |
+| Tool               | Purpose                                |
+|--------------------|----------------------------------------|
+| IntelliJ IDEA      | Develop & run Spring Boot projects     |
+| PostgreSQL         | Relational database used this week     |
+| pgAdmin / DBeaver  | GUI clients for exploring the database |
+| Postman            | Test REST API endpoints                |
+| Spring Initializer | Generate Spring Boot skeleton projects |
 
 ---
 
@@ -76,4 +80,3 @@ spring-boot-db-demo/
 ```
 
 ---
-

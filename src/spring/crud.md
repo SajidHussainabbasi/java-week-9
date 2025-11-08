@@ -130,7 +130,8 @@ This will be covered in detail in the next lesson, but for now:
 ```java
 @RestController
 @RequestMapping("/api/students")
-public class StudentController {
+public class StudentController 
+{
 
     private final StudentService service;
 
