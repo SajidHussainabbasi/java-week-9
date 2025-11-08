@@ -21,11 +21,9 @@ To make a class an entity, we use the `@Entity` annotation.
 
 Create a new package named:
 
-```
-
+```bash
 src/main/java/com/example/demo/model
-
-````
+```
 
 Inside it, create `Student.java`:
 
@@ -36,7 +34,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "students") // Optional: specify table name
-public class Student 
+public class Student
 {
 
     @Id
@@ -48,7 +46,7 @@ public class Student
     private String email;
 
     public Student() {}
-    public Student(String name, int age, String email) 
+    public Student(String name, int age, String email)
     {
         this.name = name;
         this.age = age;
@@ -89,14 +87,14 @@ public class Student
         this.email = email;
     }
 }
-````
+```
 
 ---
 
 ## 3. Key JPA Annotations
 
 | Annotation              | Purpose                                                 |
-|-------------------------|---------------------------------------------------------|
+| ----------------------- | ------------------------------------------------------- |
 | `@Entity`               | Marks class as a database entity                        |
 | `@Table(name = "...")`  | (Optional) Defines custom table name                    |
 | `@Id`                   | Marks the primary key field                             |
@@ -163,12 +161,11 @@ is included.
 
 You now know how to:
 
-* Create **entity classes**
-* Map class fields to **database table columns**
-* Configure primary keys using `@Id` and `@GeneratedValue`
-* Let Hibernate automatically generate database tables
+- Create **entity classes**
+- Map class fields to **database table columns**
+- Configure primary keys using `@Id` and `@GeneratedValue`
+- Let Hibernate automatically generate database tables
 
 This prepares us for the next step: interacting with these tables using **repositories**.
 
 ---
-

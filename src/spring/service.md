@@ -26,10 +26,8 @@ Using a service layer provides:
 
 ## 2. Service Layer Role in Architecture
 
-```
-
+```txt
 Controller → Calls → Service → Calls → Repository → Talks to DB
-
 ```
 
 | Layer          | Responsibility                       |
@@ -45,10 +43,8 @@ Controller → Calls → Service → Calls → Repository → Talks to DB
 
 Example folder structure:
 
-```
-
+```bash
 src/main/java/com/example/project/service
-
 ````
 
 Example service class:
@@ -99,7 +95,7 @@ public class StudentService {
 }
 ````
 
-### Key Annotation:
+### Key Annotation
 
 | Annotation | Meaning                                                                |
 |------------|------------------------------------------------------------------------|
@@ -145,4 +141,3 @@ The controller **does not** interact with the repository directly.
 The Service layer ensures the application remains **scalable, testable, and well-structured**.
 
 ---
-

@@ -9,7 +9,7 @@ To keep the project clean and maintainable, we use a **layered architecture**.
 
 Instead of writing everything in the controller, we separate responsibilities:
 
-```
+```txt
 
 Controller  →  Handles HTTP requests (input/output)
 Service     →  Business logic (rules & processing)
@@ -19,6 +19,7 @@ Model       →  Entity representing data
 ```
 
 This makes the application easier to:
+
 - Understand
 - Maintain
 - Test
@@ -28,7 +29,7 @@ This makes the application easier to:
 
 ## 2. Project Structure Overview
 
-```
+```txt
 
 src/main/java/com/example/demo/
 ├── controller/
@@ -40,7 +41,7 @@ src/main/java/com/example/demo/
 ├── model/
 │   └── Student.java
 
-````
+```
 
 ---
 
@@ -86,7 +87,7 @@ public class StudentService {
         repo.deleteById(id);
     }
 }
-````
+```
 
 ---
 
@@ -94,7 +95,7 @@ public class StudentService {
 
 Create `StudentController.java` in:
 
-```
+```bash
 src/main/java/com/example/demo/controller
 ```
 
@@ -153,7 +154,7 @@ public class StudentController {
 ## 5. API Endpoints Summary
 
 | Method   | Endpoint             | Description           |
-|----------|----------------------|-----------------------|
+| -------- | -------------------- | --------------------- |
 | `GET`    | `/api/students`      | Get all students      |
 | `GET`    | `/api/students/{id}` | Get one student by ID |
 | `POST`   | `/api/students`      | Create a student      |
@@ -161,4 +162,3 @@ public class StudentController {
 | `DELETE` | `/api/students/{id}` | Delete a student      |
 
 ---
-

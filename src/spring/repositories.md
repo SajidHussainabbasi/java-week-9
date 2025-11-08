@@ -16,6 +16,7 @@ It provides the logic required to:
 - Delete data
 
 This follows the **Repository Design Pattern**, which helps keep your code:
+
 - Organized
 - Easy to test
 - Reusable
@@ -28,12 +29,12 @@ To create a repository, we define an interface and extend:
 
 ```java
 JpaRepository<EntityType, PrimaryKeyType>
-````
+```
 
 This gives us many ready-to-use methods such as:
 
 | Method           | Purpose                              |
-|------------------|--------------------------------------|
+| ---------------- | ------------------------------------ |
 | `save(entity)`   | Insert or update a record            |
 | `findAll()`      | Fetch all records                    |
 | `findById(id)`   | Fetch a single record by primary key |
@@ -45,7 +46,7 @@ These methods are created **automatically** — no SQL needed.
 
 ## 3. Example Structure
 
-```
+```txt
 src/main/java/com/example/project/
  ├── model/        → Entity classes (database tables)
  ├── repository/   → Interfaces for data access
@@ -90,10 +91,10 @@ No SQL required — Spring builds the query behind the scenes.
 Repositories should handle **data operations only**.
 If you need business logic such as:
 
-* Validations
-* Filtering
-* Updating multiple fields
-* Calling another API
+- Validations
+- Filtering
+- Updating multiple fields
+- Calling another API
 
 Then the logic should go inside a **Service** class.
 
@@ -120,7 +121,7 @@ public class MyEntityService {
 ## ✅ Summary
 
 | Layer              | Responsibility             |
-|--------------------|----------------------------|
+| ------------------ | -------------------------- |
 | **Controller**     | Handles HTTP requests      |
 | **Service**        | Contains business logic    |
 | **Repository**     | Talks to the database      |
@@ -129,4 +130,3 @@ public class MyEntityService {
 Spring Data JPA makes repositories **simple, powerful, and clean**, letting you build apps faster with less code.
 
 ---
-

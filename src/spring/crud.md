@@ -9,6 +9,7 @@ We simply create a **Repository interface**, and Spring generates all the logic 
 ## 1. What Is a Repository?
 
 A **Repository** is an interface that provides methods to:
+
 - Insert (Create)
 - Retrieve (Read)
 - Update (Update)
@@ -24,11 +25,9 @@ In Spring Data JPA, we create repositories by extending **`JpaRepository`**.
 
 Create a new package:
 
-```
-
+```bash
 src/main/java/com/example/demo/repository
-
-````
+```
 
 Inside it, create `StudentRepository.java`:
 
@@ -39,19 +38,19 @@ import com.example.demo.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
-public interface StudentRepository extends JpaRepository<Student, Long> 
+public interface StudentRepository extends JpaRepository<Student, Long>
 {
     // Example of custom query method
     List<Student> findByName(String name);
 }
-````
+```
 
 ### Why does this work?
 
 Because `JpaRepository<Student, Long>` provides ready-to-use methods like:
 
 | Method           | Action                    |
-|------------------|---------------------------|
+| ---------------- | ------------------------- |
 | `save(entity)`   | Insert or update a record |
 | `findAll()`      | Get all records           |
 | `findById(id)`   | Get one record by ID      |
@@ -68,7 +67,7 @@ Instead, we follow the **Service Layer** pattern (clean architecture).
 
 Create:
 
-```
+```bash
 src/main/java/com/example/demo/service
 ```
 
@@ -83,12 +82,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class StudentService 
+public class StudentService
 {
 
     private final StudentRepository repo;
 
-    public StudentService(StudentRepository repo) 
+    public StudentService(StudentRepository repo)
     {
         this.repo = repo;
     }
@@ -156,7 +155,7 @@ public class StudentController {
 ## 5. Test the API Using Postman
 
 | Method | Endpoint             | Body (JSON)                                             | Description       |
-|--------|----------------------|---------------------------------------------------------|-------------------|
+| ------ | -------------------- | ------------------------------------------------------- | ----------------- |
 | GET    | `/api/students`      | —                                                       | Get all students  |
 | POST   | `/api/students`      | `{ "name": "Ana", "age": 22, "email": "ana@mail.com" }` | Add student       |
 | GET    | `/api/students/{id}` | —                                                       | Get student by ID |
@@ -169,10 +168,9 @@ public class StudentController {
 
 You now know how to:
 
-* Create a **Repository** using `JpaRepository`
-* Perform CRUD operations *without writing SQL*
-* Follow best structure using a **Service layer**
-* Prepare data to be exposed via **REST endpoints**
+- Create a **Repository** using `JpaRepository`
+- Perform CRUD operations _without writing SQL_
+- Follow best structure using a **Service layer**
+- Prepare data to be exposed via **REST endpoints**
 
 ---
-

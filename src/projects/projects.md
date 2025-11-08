@@ -1,10 +1,10 @@
 # 10 Spring Boot + Database Project Ideas – Week 9
 
-*(Using PostgreSQL + Spring Data JPA)*
+Using PostgreSQL + Spring Data JPA
 
 ---
 
-## Dependency to include:
+## Dependency to include
 
 ```xml
 <dependencies>
@@ -27,13 +27,13 @@
         <artifactId>spring-boot-devtools</artifactId>
         <optional>true</optional>
     </dependency>
-    
+
     <!-- Spring Data JPA -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
-    
+
     <!-- Bean Validation -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -48,9 +48,10 @@
     </dependency>
 </dependencies>
 ```
+
 ---
 
-## 1. 👨‍🎓 Student Records API 
+## 1. 👨‍🎓 Student Records API
 
 **Goal:** Learn basic CRUD using JPA and PostgreSQL.
 
@@ -58,8 +59,7 @@
 Create an API to store and manage student information in a database.
 Each student has `id`, `name`, `age`, and `email`.
 
-**Endpoints:** 
-```
+**Endpoints:**
 
 ```txt
 GET /students               → Get all students
@@ -71,9 +71,9 @@ DELETE /students/{id}       → Delete student
 
 **Learning Focus:**
 
-* Controller → Service → Repository flow
-* Mapping JSON to Entities
-* `JpaRepository` standard CRUD methods
+- Controller → Service → Repository flow
+- Mapping JSON to Entities
+- `JpaRepository` standard CRUD methods
 
 **Extension:**
 Add search:
@@ -84,7 +84,7 @@ GET /students/search?name=alex
 
 ---
 
-## 2. ☎️ Contact Manager API 
+## 2. ☎️ Contact Manager API
 
 **Goal:** Practice validation and unique constraints.
 
@@ -103,8 +103,8 @@ DELETE /contacts/{id}
 
 **Learning Focus:**
 
-* `@Email`, `@NotBlank`, `@Column(unique = true)`
-* Handling validation errors correctly
+- `@Email`, `@NotBlank`, `@Column(unique = true)`
+- Handling validation errors correctly
 
 **Extension:**
 Search by name:
@@ -115,7 +115,7 @@ GET /contacts/search?name=john
 
 ---
 
-## 3. 🛒 Inventory & Stock Manager API 
+## 3. 🛒 Inventory & Stock Manager API
 
 **Goal:** Work with numeric fields and computed values.
 
@@ -134,8 +134,8 @@ GET /products/value          → Total inventory value
 
 **Learning Focus:**
 
-* Using repository methods to query and compute totals
-* Returning formatted numeric responses
+- Using repository methods to query and compute totals
+- Returning formatted numeric responses
 
 **Extension:**
 Alert if stock level is low.
@@ -159,8 +159,8 @@ GET /recipes/search?keyword=chicken  → Search by text
 
 **Learning Focus:**
 
-* Using `Containing` and `Like` queries
-* Returning lists of filtered results
+- Using `Containing` and `Like` queries
+- Returning lists of filtered results
 
 **Extension:**
 Add category filter:
@@ -188,8 +188,8 @@ GET /workouts/today           → Only today’s workouts
 
 **Learning Focus:**
 
-* `LocalDate` in entities
-* Date filtering
+- `LocalDate` in entities
+- Date filtering
 
 **Extension:**
 Get workouts for a specific date:
@@ -217,8 +217,8 @@ GET /expenses?month=2025-03       → Filter by month
 
 **Learning Focus:**
 
-* `LocalDate` range queries
-* Custom repository methods: `findByDateBetween(...)`
+- `LocalDate` range queries
+- Custom repository methods: `findByDateBetween(...)`
 
 **Extension:**
 Summary endpoint:
@@ -247,9 +247,9 @@ DELETE /appointments/{id}
 
 **Learning Focus:**
 
-* `LocalDateTime` usage
-* Business logic in **Service**, not controller
-* Time conflict detection
+- `LocalDateTime` usage
+- Business logic in **Service**, not controller
+- Time conflict detection
 
 **Extension:**
 Check slot availability:
@@ -278,7 +278,7 @@ GET /movies?favorite=true
 
 **Learning Focus:**
 
-* Custom repository queries like:
+- Custom repository queries like:
 
 ```java
 List<Movie> findByRatingGreaterThan(double rating);
@@ -308,9 +308,9 @@ GET /weather/{city}
 
 **Learning Focus:**
 
-* JSON → DTO → Entity mapping
-* Cache old results to avoid repeated API calls
-* Compare timestamps before calling API again
+- JSON → DTO → Entity mapping
+- Cache old results to avoid repeated API calls
+- Compare timestamps before calling API again
 
 **Extension:**
 Auto-refresh weather every 30 minutes.
@@ -322,7 +322,7 @@ Auto-refresh weather every 30 minutes.
 **Goal:** Fetch external API data and allow saving favorites to DB.
 
 **Description:**
-Fetch live news articles and store user-favorited articles.
+Fetch live news articles and store user-favorite articles.
 
 **Endpoints:**
 
@@ -335,12 +335,13 @@ GET /news/favorites            → View saved articles
 
 **Learning Focus:**
 
-* External API consumption
-* Custom response mapping
-* Persistence layer for favorites
+- External API consumption
+- Custom response mapping
+- Persistence layer for favorites
 
 **Extension:**
 Allow tagging + category grouping.
 
 ---
+
 Happy coding with Spring Boot and PostgreSQL! 🚀

@@ -42,7 +42,7 @@ Make sure your `pom.xml` includes:
         <optional>true</optional>
     </dependency>
 </dependencies>
-````
+```
 
 If you used **Spring Initializer**, these may already be included.
 
@@ -75,10 +75,10 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 ```
 
-### What these settings mean:
+### What these settings mean
 
 | Property                        | Description                                             |
-|---------------------------------|---------------------------------------------------------|
+| ------------------------------- | ------------------------------------------------------- |
 | `spring.datasource.url`         | Database URL & name                                     |
 | `spring.jpa.hibernate.ddl-auto` | Controls table auto-creation (`update`, `create`, etc.) |
 | `spring.jpa.show-sql`           | Prints SQL statements to console (useful for debugging) |
@@ -94,7 +94,7 @@ Start the application (e.g., click the **Run** button in IntelliJ).
 
 If everything is correct, you should see logs confirming the database connection, such as:
 
-```
+```txt
 HHH000204: Processing PersistenceUnitInfo
 HHH000412: Database -> PostgreSQL
 Hibernate: create table ...
@@ -102,9 +102,9 @@ Hibernate: create table ...
 
 If errors occur, check:
 
-* Database name, username, password
-* PostgreSQL is running
-* Port `5432` is open
+- Database name, username, password
+- PostgreSQL is running
+- Port `5432` is open
 
 ---
 
@@ -114,10 +114,10 @@ Add a simple REST controller to confirm the application runs:
 
 ```java
 @RestController
-public class TestController 
+public class TestController
 {
     @GetMapping("/")
-    public String home() 
+    public String home()
     {
         return "Database connection is ready!";
     }
@@ -126,7 +126,7 @@ public class TestController
 
 Visit:
 
-```
+```txt
 http://localhost:8080/
 ```
 
@@ -138,10 +138,9 @@ If you see the message → ✅ Your project is successfully connected to Postgre
 
 By completing this step, we have:
 
-* Added JPA and PostgreSQL dependencies
-* Created a PostgreSQL database
-* Configured connection details in Spring Boot
-* Verified the application starts and connects
+- Added JPA and PostgreSQL dependencies
+- Created a PostgreSQL database
+- Configured connection details in Spring Boot
+- Verified the application starts and connects
 
 ---
-
